@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 15, 2020 at 11:14 PM
+-- Generation Time: Jul 22, 2020 at 07:41 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -265,8 +265,8 @@ CREATE TABLE `menus` (
 --
 
 INSERT INTO `menus` (`id`, `menu_name`, `menu_url`, `status`, `created_at`, `updated_at`, `entry_by`, `modify_by`, `_token`, `icon`) VALUES
-(1, 'Packages', 'pkg', 'active', '2020-07-15 14:17:26', '2020-07-15 14:23:57', 33, 33, 'yh41rPBIQHiB7t1p6z7s7LmZzJxvwTToykRVlv4x', 'fa-cog'),
-(2, 'Music', 'music', 'active', '2020-07-15 14:24:33', '2020-07-15 14:24:33', 33, 33, 'yh41rPBIQHiB7t1p6z7s7LmZzJxvwTToykRVlv4x', 'fa-icon-music');
+(1, 'Packages', 'pkg', 'active', '2020-07-15 14:17:26', '2020-07-17 01:02:41', 33, 33, 'yh41rPBIQHiB7t1p6z7s7LmZzJxvwTToykRVlv4x', 'fa-list-alt'),
+(2, 'Music', 'music', 'active', '2020-07-15 14:24:33', '2020-07-17 01:00:25', 33, 33, 'yh41rPBIQHiB7t1p6z7s7LmZzJxvwTToykRVlv4x', 'fa-music');
 
 -- --------------------------------------------------------
 
@@ -330,6 +330,7 @@ CREATE TABLE `musics` (
   `id` int(10) UNSIGNED NOT NULL,
   `track_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `album_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `artist_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `genre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `category` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `release_date` date NOT NULL,
@@ -338,6 +339,16 @@ CREATE TABLE `musics` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `musics`
+--
+
+INSERT INTO `musics` (`id`, `track_name`, `album_name`, `artist_name`, `genre`, `category`, `release_date`, `location`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Lamb of God - Laid to rest (HQ).mp3', 'Lamb of god', 'Lamb of god', 'Metalcore', 'Metal', '2020-07-20', 'Dhaka', '1', '2020-07-20 11:16:17', '2020-07-20 11:52:44'),
+(2, 'Lamb of God - The Duke (Official Audio).mp3', 'Lamb of god', 'Lamb of god', 'Metalcore', 'Metal', '2020-07-20', 'Dhaka', '1', '2020-07-20 11:16:17', '2020-07-20 11:52:44'),
+(3, 'Lamb of God - Walk With Me In Hell Instrumental.mp3', 'Lamb of god', 'Lamb of god', 'Metalcore', 'Metal', '2020-07-20', 'Dhaka', '1', '2020-07-20 11:16:17', '2020-07-20 11:52:44'),
+(4, 'Mark Morton - Cross Off (Lyric Video) ft. Chester Bennington.mp3', 'Lamb of god', 'Lamb of god', 'Metalcore', 'Metal', '2020-07-20', 'Dhaka', '1', '2020-07-20 11:16:17', '2020-07-20 11:52:44');
 
 -- --------------------------------------------------------
 
@@ -372,11 +383,25 @@ CREATE TABLE `plans` (
   `duration` int(11) NOT NULL,
   `duration_unit` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `details` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `playback_limit` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `playback_limit` int(32) NOT NULL,
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `plans`
+--
+
+INSERT INTO `plans` (`id`, `plan_name`, `actual_cost`, `sale_cost`, `duration`, `duration_unit`, `details`, `playback_limit`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Test Pkg 1', 50.00, 60.00, 2, 'Month', 'Test', 100, '0', '2020-07-17 05:50:42', '2020-07-17 08:12:26'),
+(2, 'Test Pkg 2', 50.00, 60.00, 2, 'Month', 'Test', 100, '0', '2020-07-17 05:50:42', '2020-07-17 08:12:26'),
+(3, 'Test Pkg 3', 50.00, 60.00, 2, 'Month', 'Test', 100, '0', '2020-07-17 05:50:42', '2020-07-17 08:12:26'),
+(4, 'Test Pkg 4', 50.00, 60.00, 2, 'Month', 'Test', 100, '0', '2020-07-17 05:50:42', '2020-07-17 08:12:26'),
+(5, 'Test Pkg 5', 50.00, 60.00, 2, 'Month', 'Test', 100, '0', '2020-07-17 05:50:42', '2020-07-17 08:12:26'),
+(6, 'Test Pkg 6', 50.00, 60.00, 2, 'Month', 'Test', 100, '0', '2020-07-17 05:50:42', '2020-07-17 08:12:26'),
+(7, 'Test Pkg 7', 50.00, 60.00, 2, 'Month', 'Test', 100, '0', '2020-07-17 05:50:42', '2020-07-17 08:12:26'),
+(8, 'Test Pkg 8', 50.00, 60.00, 2, 'Month', 'Test', 100, '0', '2020-07-17 05:50:42', '2020-07-17 08:12:26');
 
 -- --------------------------------------------------------
 
@@ -466,9 +491,9 @@ CREATE TABLE `sub_menus` (
 --
 
 INSERT INTO `sub_menus` (`id`, `sub_menu_name`, `sub_menu_url`, `main_menu_id`, `status`, `icon`, `created_at`, `updated_at`, `entry_by`, `modify_by`) VALUES
-(1, 'Manage', 'plan', 1, 'active', 'fa-icon-chevron-sign-right', '2020-07-15 14:20:40', '2020-07-15 14:22:35', 33, 33),
-(5, 'Add Music', 'add_music', 2, 'active', 'fa-list', '2020-07-15 14:31:12', '2020-07-15 14:31:12', 33, NULL),
-(6, 'Music List', 'music_list', 2, 'active', 'fa-list', '2020-07-15 14:26:35', '2020-07-15 14:26:35', 33, NULL);
+(1, 'Manage', 'plan', 1, 'active', 'fa-cogs', '2020-07-15 14:20:40', '2020-07-17 01:03:08', 33, 33),
+(5, 'Add Music', 'add_music', 2, 'active', 'fa-file-audio-o', '2020-07-15 14:31:12', '2020-07-17 01:01:45', 33, 33),
+(6, 'Music List', 'music_list', 2, 'active', 'fa-headphones', '2020-07-15 14:26:35', '2020-07-17 01:01:13', 33, 33);
 
 -- --------------------------------------------------------
 
@@ -496,8 +521,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `country`, `created_at`, `updated_at`, `mobile`, `role_id`, `status`, `entry_by`) VALUES
-(33, 'Salman Kabir (Shouvo)', 'sksshouvo2@gmail.com', '$2y$10$akqAU3l1pYKbvKoLEwl.FeRG9RfBMhPyUcWzlSrUuHfhIFdrvaLMC', 'M9PukZ4pC3jDp5brkatp2gWRTKYvMIRAF7ZZ5fg7dC1gCuNa7BiJ05pAoAj3', 'Bangladesh', '2018-03-13 13:56:32', '2020-06-30 04:14:35', '01970702837', 'Admin', 1, 33),
-(44, 'Test', 'test@test.com', '$2y$10$TdHTilEIT4pmhGajS6VSo.TiGlo5kEVY19GZf06ntm.HWnQtcmdkq', 'POJClzTCpsVwTwEp4O0wgkDTMAaJvFyo2NTPpfhZxWVoBodCa5w9lmsYmtPJ', 'Bangladesh', '2020-02-01 23:57:28', '2020-02-09 13:18:57', '01900000000', 'Staffs', 1, 44),
+(33, 'Salman Kabir (Shouvo)', 'sksshouvo2@gmail.com', '$2y$10$akqAU3l1pYKbvKoLEwl.FeRG9RfBMhPyUcWzlSrUuHfhIFdrvaLMC', 'nObl4RgFrT7AEk0dR3cCGh8Gl63G7MYsj0nOw3AdoVb1adM7DqhQVQawe3ft', 'Bangladesh', '2018-03-13 13:56:32', '2020-06-30 04:14:35', '01970702837', 'Admin', 1, 33),
+(44, 'Test', 'test@test.com', '$2y$10$TdHTilEIT4pmhGajS6VSo.TiGlo5kEVY19GZf06ntm.HWnQtcmdkq', 'z7Wohukzz8dnQwciy2z2TdpkPwcE7HxwmJbEGRTTCPfNYnTgocAxw8eE2Krs', 'Bangladesh', '2020-02-01 23:57:28', '2020-02-09 13:18:57', '01900000000', 'Staffs', 1, 44),
 (45, 'Mehedi hasan Chonchol', 'chonchol.am@gmail.com', '$2y$10$GvoJL7IYlbckeTJWC8ahS.y4ebe38AZoWjUeYYia3z1e9jf12/ls6', NULL, 'Bangladesh', '2020-07-15 14:13:33', '2020-07-15 14:13:33', '01678035887', 'Admin', 1, 33);
 
 -- --------------------------------------------------------
@@ -623,13 +648,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `musics`
 --
 ALTER TABLE `musics`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `plans`
 --
 ALTER TABLE `plans`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -647,7 +672,7 @@ ALTER TABLE `role_user`
 -- AUTO_INCREMENT for table `sub_menus`
 --
 ALTER TABLE `sub_menus`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`

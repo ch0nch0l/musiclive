@@ -8,6 +8,7 @@
         
     @show
     <div class="col-sm-12">
+        <br>
         <p class="back-link">Copy Right of Little Inventory is sksshouvo.inc</p>
     </div>
 </div><!--/.row-->

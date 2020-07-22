@@ -38,13 +38,13 @@
    
     
     <ul class="nav menu">
-        <li {{{ (Request::is('admin_panel') ? 'class=active' : '') }}} ><a href="admin_panel"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+        <li {{{ (Request::is('admin_panel') ? 'class=active' : '') }}} ><a href="admin_panel"><i class="fa fa-dashboard">&nbsp;</i> Dashboard</a></li>
        
         {{-- <li {{{ (Request::is('product') ? 'class=active' : '') }}}><a href="product"><em class="fa fa-plane">&nbsp;</em> Product</a></li> --}}
     @foreach ($main_menu as $item)
     
     <li class="parent "><a data-toggle="collapse" href="#{{$item->menu_url}}"  >
-        <em class="fa {{$item->icon}}">&nbsp;</em>{{$item->menu_name}} <span data-toggle="collapse" href="#{{$item->menu_name}}" class="icon pull-right"><em class="fa fa-plus"></em></span>
+        <i class="fa {{$item->icon}}">&nbsp;</i>{{$item->menu_name}} <span data-toggle="collapse" href="#{{$item->menu_name}}" class="icon pull-right"><em class="fa fa-plus"></em></span>
         </a>
         <ul class="children collapse" id="{{$item->menu_url}}">
             @if (Auth::user()->role_id=="Admin")
@@ -71,7 +71,10 @@
         @endif
        
             @foreach ($sub_menu as $item_sub)
-            <li><a href="{{$item_sub->sub_menu_url}}"><em class="fa {{$item_sub->icon}}">&nbsp;</em>{{$item_sub->sub_menu_name}}</a></li>    
+            @php
+                $ur = url($item_sub->sub_menu_url)
+            @endphp
+            <li><a href="{{$ur}}"><em class="fa {{$item_sub->icon}}">&nbsp;</em>{{$item_sub->sub_menu_name}}</a></li>    
             @endforeach
             
            
@@ -80,10 +83,10 @@
     @endforeach
     @if (Auth::user()->role_id=="Admin")
     <li class="parent "><a data-toggle="collapse" href="#sub-item-1" {{ (Request::is('user') ? 'class=active' : '') }} >
-            <em class="fa fa-navicon">&nbsp;</em> Setup <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
+            <i class="fa fa-navicon">&nbsp;</i> Setup <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
             </a>
             <ul class="children collapse" id="sub-item-1">
-                <li><a href="user"><em class="fa fa-user">&nbsp;</em> User Panel</a></li>
+                <li><a href="user"><i class="fa fa-user">&nbsp;</i> User Panel</a></li>
                 <li><a class="" href="menu">
                     <span class="fa fa-list">&nbsp;</span> Menu
                 </a></li>

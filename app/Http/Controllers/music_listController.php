@@ -11,7 +11,9 @@ class music_listController extends Controller
      */
     public function index()
     {
-        return view('admin_panel.music_list');
+        $random_color = new colorController;
+        $music_list = music_list::groupBy('album_name')->get();
+        return view('admin_panel.music_list', compact('music_list', 'random_color'));
     }
 }
 

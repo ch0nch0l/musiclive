@@ -1,4 +1,5 @@
 {{--  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>  --}}
+
 <script src="{{asset('js/jquery-1.11.1.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script src="{{asset('js/chart.min.js')}}"></script>

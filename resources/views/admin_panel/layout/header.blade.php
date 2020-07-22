@@ -29,6 +29,9 @@
 			overflow:auto
 		}
 	</style>
+	@section('extra_css')
+		
+	@show
 </head>
 <body>
 	
