@@ -20,4 +20,4 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  <!-- Meters graphs -->
 <script src="{{asset('website/js/jquery-2.1.4.js')}}"></script>
 </head> 
-<body class="sticky-header left-side-collapsed"  onload="initMap()">
+<body class="sticky-header left-side-collapsed">

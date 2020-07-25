@@ -51,23 +51,29 @@
                 <input required type="file" multiple name="mp3_tracks[]" id="mp3_tracks" class="form-control" >
                 <br>
                 <label for="album_art" class="form-control">Album Art</label>
-                <input required type="file" name="album_art" id="album_art" class="form-control" onchange="readURL(this)">
+                <input required type="file" name="album_art" id="album_art" class="form-control" onchange="readURL(this, '#thumbnil_image')">
+                <br>
+                <label for="album_banner" class="form-control">Album Banner</label>
+                <input type="file" name="album_banner" id="album_banner" class="form-control" onchange="readURL(this, '#banner_image')">
                 
         </div>
         <div class="col-sm-6">
+                <fieldset>
+                        <legend>Mp3 Files</legend>
+                        <span id="all_mp3">
+                        </span>
+                        
+                </fieldset>
                 <fieldset>
                         <legend>Image Preview</legend>
                         <img id="thumbnil_image" class="img-responsive" src="{{asset('img/example.png')}}" alt="">
                         <br>
         </fieldset>
-        <br>
         <fieldset>
-                <legend>Mp3 Files</legend>
-                <span id="all_mp3">
-                </span>
-                
-        </fieldset>
-                
+                <legend>Banner Preview</legend>
+                <img id="banner_image" class="img-responsive" src="{{asset('img/example_banner.png')}}" alt="">
+                <br>
+</fieldset>     
         </div>
         <div class="col-sm-12">
                 <br>
@@ -79,8 +85,8 @@
         @endsection
         @section('extra_js')
             <script>
-                function readURL(input) {
-                        $('#thumbnil_image').attr('src', "");
+                function readURL(input, element) {
+                        $(element).attr('src', "");
 
                         if (input.files && input.files[0]) {
                 
@@ -90,7 +96,7 @@
                 
                             reader.onload = function (e) {
                 
-                                $('#thumbnil_image').attr('src', e.target.result).css("width", "100%");
+                                $(element).attr('src', e.target.result).css("width", "100%");
                 
                             }
                 

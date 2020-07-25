@@ -40,6 +40,9 @@ class add_musicController extends Controller
             $music->save();
             $request->mp3_tracks[$key]->storeAs('public/mp3', $music->id.".mp3");
             $request->album_art->storeAs('public/album_art', $music->id.".".$request->file('album_art')->extension());
+            if($request->album_banner!="" && $key == 0){
+                $request->album_banner->storeAs('public/album_banner', $music->id.".".$request->file('album_banner')->extension());
+            }
         }
         session()->flash('message', 'Music Uploaded Successfully');
         return redirect('add_music');
@@ -83,6 +86,9 @@ class add_musicController extends Controller
                     if($request->album_art!=""){
                         
                         $request->album_art->storeAs('public/album_art', $music->id.".".$request->file('album_art')->extension());
+                    }
+                    if($request->album_banner!=""){
+                        $request->album_banner->storeAs('public/album_banner', $music->id.".".$request->file('album_banner')->extension());
                     }
                 $album_name = $music->album_name; 
                 }

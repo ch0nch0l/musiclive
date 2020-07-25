@@ -4,10 +4,10 @@
 
           <!--logo and iconic logo start-->
           <div class="logo">
-              <h1><a href="index.html">Mosai<span>c</span></a></h1>
+              <h1><a href="javascript:void(0)" onclick="load_page('body')">Mosai<span>c</span></a></h1>
           </div>
           <div class="logo-icon text-center">
-              <a href="index.html">M </a>
+              <a href="javascript:void(0)" onclick="load_page('body')">M </a>
           </div>
     <!-- /w3l-agile -->
           <!--logo and iconic logo end-->
@@ -15,12 +15,12 @@
 
               <!--sidebar nav start-->
                   <ul class="nav nav-pills nav-stacked custom-nav">
-                      <li class="active"><a href="index.html"><i class="lnr lnr-home"></i><span>Home</span></a></li>
-                      <li><a href="radio.html"><i class="camera"></i> <span>Radio</span></a></li>
+                      <li class="active"><a href="#"><i class="lnr lnr-home" onclick="load_page('body')"></i><span>Home</span></a></li>
+                      {{--  <li><a href="radio.html"><i class="camera"></i> <span>Radio</span></a></li>
                       <li><a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-th"></i><span>Apps</span></a></li>
-                      <li><a href="radio.html"><i class="lnr lnr-users"></i> <span>Artists</span></a></li> 
-                      <li><a href="browse.html"><i class="lnr lnr-music-note"></i> <span>Albums</span></a></li>						
-                      <li class="menu-list"><a href="browse.html"><i class="lnr lnr-indent-increase"></i> <span>Browser</span></a>  
+                      <li><a href="radio.html"><i class="lnr lnr-users"></i> <span>Artists</span></a></li>   --}}
+                      <li><a href="#" onclick="load_page('beats')"><i class="lnr lnr-music-note"></i> <span>Beats</span></a></li>						
+                      {{--  <li class="menu-list"><a href="browse.html"><i class="lnr lnr-indent-increase"></i> <span>Browser</span></a>  
                           <ul class="sub-menu-list">
                               <li><a href="browse.html">Artists</a> </li>
                               <li><a href="404.html">Services</a> </li>
@@ -32,12 +32,12 @@
                           <ul class="sub-menu-list">
                               <li><a href="radio.html">All Songs</a></li>
                           </ul>
-                      </li>
-                      <li class="menu-list"><a href="contact.html"><i class="fa fa-thumb-tack"></i><span>Contact</span></a>
+                      </li>  --}}
+                      {{--  <li class="menu-list"><a href="contact.html"><i class="fa fa-thumb-tack"></i><span>Contact</span></a>
                           <ul class="sub-menu-list">
                               <li><a href="contact.html">Location</a> </li>
                           </ul>
-                      </li>     
+                      </li>       --}}
                   </ul>
               <!--sidebar nav end-->
           </div>

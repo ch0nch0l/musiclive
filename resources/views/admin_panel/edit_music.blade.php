@@ -53,7 +53,10 @@
                 <input type="file" multiple name="mp3_tracks[]" id="mp3_tracks" class="form-control" >
                 <br>
                 <label for="album_art" class="form-control">Album Art</label>
-                <input type="file" name="album_art" id="album_art" class="form-control" onchange="readURL(this)">
+                <input type="file" name="album_art" id="album_art" class="form-control" onchange="readURL(this, '#thumbnil_image')">
+                <br>
+                <label for="album_banner" class="form-control">Album Banner</label>
+                <input type="file" name="album_banner" id="album_banner" class="form-control" onchange="readURL(this, '#banner_image')">
             </fieldset>
                 
         </div>
@@ -63,6 +66,12 @@
                         <img id="thumbnil_image" class="img-responsive" src="{{asset('../storage/app/public/album_art/'.$add_music[0]->id.'.jpeg')}}" alt="">
                         <br>
         </fieldset>
+        <br>
+        <fieldset>
+                <legend>Banner Preview</legend>
+                <img id="banner_image" class="img-responsive" src="{{asset('../storage/app/public/album_banner/'.$add_music[0]->id.'.jpeg')}}" alt="">
+                <br>
+</fieldset> 
         <br>
         <fieldset>
                 <legend>Mp3 Files</legend>
@@ -92,8 +101,8 @@
         @endsection
         @section('extra_js')
             <script>
-                function readURL(input) {
-                        $('#thumbnil_image').attr('src', "");
+                function readURL(input, element) {
+                        $(element).attr('src', "");
 
                         if (input.files && input.files[0]) {
                 
@@ -103,7 +112,7 @@
                 
                             reader.onload = function (e) {
                 
-                                $('#thumbnil_image').attr('src', e.target.result).css("width", "275");
+                                $(element).attr('src', e.target.result).css("width", "100%");
                 
                             }
                 

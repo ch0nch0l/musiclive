@@ -14,4 +14,8 @@ class ajaxController extends Controller
 
         return json_encode($rr);
     }
+
+    public function page_function($id){
+        return view('website.layout.'.$id);
+    }
 }

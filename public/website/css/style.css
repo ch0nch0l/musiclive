@@ -754,7 +754,8 @@ footer {
         border-top: 1px solid #423D3E;
     text-align:center;
     position: fixed;
-    bottom: 0;
+	bottom: 0;
+	z-index: 100;
 }
 footer  p {
 	color: #fff;
@@ -794,7 +795,7 @@ footer  p a:hover{
  /*--main-content--*/
 .music-left{
  float:left;
- width:65%;
+ width:100%;
 }
 .music-right{
  float:left;
