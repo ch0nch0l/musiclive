@@ -26,7 +26,7 @@
                 
                 
              
-                <input required type="text" class="form-control" name="album_name" id="album_name" placeholder="Album Name" value="{{$add_music[0]->album_name}}">
+                <input required type="text" class="form-control" name="album_name" id="album_name" placeholder="Beats Name" value="{{$add_music[0]->album_name}}">
                 <br>
              
                 <input required type="text" class="form-control" name="artist_name" id="artist_name" placeholder="Artist name" value="{{$add_music[0]->artist_name}}">
@@ -50,7 +50,7 @@
                 <br>
                 <label for="mp3_tracks" class="form-control">Mp3 Tracks</label>
 
-                <input type="file" multiple name="mp3_tracks[]" id="mp3_tracks" class="form-control" >
+                <input type="file" name="mp3_tracks[]" id="mp3_tracks" class="form-control" >
                 <br>
                 <label for="album_art" class="form-control">Album Art</label>
                 <input type="file" name="album_art" id="album_art" class="form-control" onchange="readURL(this, '#thumbnil_image')">

@@ -10,9 +10,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('website.index');
-});
+Route::get('/', 'ajaxController@main_page');
+
+
+Route::post('create_listener', 'frontEndController@create_listener');
+Route::get('logout', 'frontEndController@logout');
+Route::post('fontLogin', 'frontEndController@login');
+
 
 Route::get('page/{id}', 'ajaxController@page_function');
 

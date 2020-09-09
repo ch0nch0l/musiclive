@@ -4,10 +4,10 @@
 
           <!--logo and iconic logo start-->
           <div class="logo">
-              <h1><a href="javascript:void(0)" onclick="load_page('body')">Mosai<span>c</span></a></h1>
+              <h1><a href="javascript:void(0)" onclick="load_page('body')">L<span>AA</span></a></h1>
           </div>
           <div class="logo-icon text-center">
-              <a href="javascript:void(0)" onclick="load_page('body')">M </a>
+              <a href="javascript:void(0)" onclick="load_page('body')">L</a>
           </div>
     <!-- /w3l-agile -->
           <!--logo and iconic logo end-->
@@ -15,11 +15,15 @@
 
               <!--sidebar nav start-->
                   <ul class="nav nav-pills nav-stacked custom-nav">
-                      <li class="active"><a href="#"><i class="lnr lnr-home" onclick="load_page('body')"></i><span>Home</span></a></li>
+                      <li class="active"><a href="javascript:void(0)"><i class="lnr lnr-home" onclick="load_page('body')"></i><span>Home</span></a></li>
                       {{--  <li><a href="radio.html"><i class="camera"></i> <span>Radio</span></a></li>
                       <li><a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-th"></i><span>Apps</span></a></li>
                       <li><a href="radio.html"><i class="lnr lnr-users"></i> <span>Artists</span></a></li>   --}}
-                      <li><a href="#" onclick="load_page('beats')"><i class="lnr lnr-music-note"></i> <span>Beats</span></a></li>						
+                      <li><a href="javascript:void(0)" onclick="load_page('beats')"><i class="lnr lnr-music-note"></i> <span>Beats</span></a></li>						
+                      @if (session('loggedin')==true)
+                      <li><a href="javascript:void(0)" onclick="load_page('wishlist')"><i class="lnr lnr-heart"></i> <span>Wishlist</span></a></li>						    
+                      @endif
+                      
                       {{--  <li class="menu-list"><a href="browse.html"><i class="lnr lnr-indent-increase"></i> <span>Browser</span></a>  
                           <ul class="sub-menu-list">
                               <li><a href="browse.html">Artists</a> </li>
@@ -75,43 +79,5 @@
           </div>
           <!-- //app-->
     <!--w3l-agile -->
-      <!-- signup -->
-          <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog" role="document">
-                  <div class="modal-content modal-info">
-                      <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
-                      </div>
-                      <div class="modal-body modal-spa">
-                          <div class="sign-grids">
-                              <div class="sign">
-                                  <div class="sign-left">
-                                      <ul>
-                                          <li><a class="fb" href="#"><i></i>Sign in with Facebook</a></li>
-                                          <li><a class="goog" href="#"><i></i>Sign in with Google</a></li>
-                                          <li><a class="linkin" href="#"><i></i>Sign in with Linkedin</a></li>
-                                      </ul>
-                                  </div>
-                                  <div class="sign-right">
-                                      <form action="#" method="post">
-
-                                          <h3>Create your account </h3>
-                                          <input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-                                          <input type="text" value="Mobile number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mobile number';}" required="">
-                                          <input type="text" value="Email id" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email id';}" required="">	
-                                          <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">	
-                                          
-                                          <input type="submit" value="CREATE ACCOUNT" >
-                                      </form>
-                                  </div>
-                                  <div class="clearfix"></div>								
-                              </div>
-                              <p>By logging in you agree to our <span>Terms and Conditions</span> and <span>Privacy Policy</span></p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <!-- //signup -->
     <!-- /w3l-agile -->
       <!-- left side end-->

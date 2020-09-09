@@ -4,6 +4,10 @@ use Illuminate\Http\Request;
 use App\{music_list};
 class music_listController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *

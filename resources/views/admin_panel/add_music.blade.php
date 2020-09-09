@@ -24,7 +24,7 @@
                 </fieldset>
                 
              
-                <input required type="text" class="form-control" name="album_name" id="album_name" placeholder="Album Name">
+                <input required type="text" class="form-control" name="album_name" id="album_name" placeholder="Beats Name">
                 <br>
              
                 <input required type="text" class="form-control" name="artist_name" id="artist_name" placeholder="Artist name">
@@ -48,7 +48,7 @@
                 <br>
                 <label for="mp3_tracks" class="form-control">Mp3 Tracks</label>
 
-                <input required type="file" multiple name="mp3_tracks[]" id="mp3_tracks" class="form-control" >
+                <input required type="file" name="mp3_tracks[]" id="mp3_tracks" class="form-control" >
                 <br>
                 <label for="album_art" class="form-control">Album Art</label>
                 <input required type="file" name="album_art" id="album_art" class="form-control" onchange="readURL(this, '#thumbnil_image')">

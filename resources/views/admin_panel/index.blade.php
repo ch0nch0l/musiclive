@@ -10,20 +10,24 @@
 				<div class="row">
 					<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
 						<div class="panel panel-teal panel-widget border-right">
-							<div class="row no-padding"><em class="fa fa-xl fa-globe color-blue"></em>
+							<div class="row no-padding"><em class="fa fa-xl fa-headphones color-blue"></em>
 								<div class="large">@php
-									$countries = \DB::table('countries')->get();
+									$countries = \DB::table('musics')->groupBy('album_name')->get();
 								@endphp
 								{{$countries->count()}}</div>
-								<div class="text-muted">Countries</div>
+								<div class="text-muted">TOTAL Albums</div>
 							</div>
 						</div>
 					</div>
 					<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
 						<div class="panel panel-blue panel-widget border-right">
-							<div class="row no-padding"><em class="fa fa-xl fa-comments color-orange"></em>
-								<div class="large">0</div>
-								<div class="text-muted">Comments</div>
+							<div class="row no-padding"><em class="fa fa-xl fa-music color-orange"></em>
+								<div class="large">
+									@php
+									$musics = \DB::table('musics')->get();
+									@endphp
+									{{$musics->count()}}</div>
+								<div class="text-muted">Total Musics</div>
 							</div>
 						</div>
 					</div>
@@ -32,9 +36,9 @@
 							<div class="row no-padding"><em class="fa fa-xl fa-users color-teal"></em>
 								<div class="large">
 									@php
-														$count_user = \DB::table('users')->get();
+														$count_user = \DB::table('users')->count();
 													@endphp
-													{{$count_user->count()}}
+													{{$count_user}}
 													
 	
 								</div>
@@ -44,9 +48,12 @@
 					</div>
 					<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
 						<div class="panel panel-red panel-widget ">
-							<div class="row no-padding"><em class="fa fa-xl fa-search color-red"></em>
-								<div class="large">0</div>
-								<div class="text-muted">Page Views</div>
+							<div class="row no-padding"><em class="fa fa-xl fa-cogs color-red"></em>
+								@php
+									$pkg = \DB::table('plans')->count();
+								@endphp
+								<div class="large">{{$pkg}}</div>
+								<div class="text-muted">Total Packages</div>
 							</div>
 						</div>
 					</div>

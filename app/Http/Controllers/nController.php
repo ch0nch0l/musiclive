@@ -8,8 +8,12 @@ use App\sub_menu;
 use DB;
 class nController extends Controller
 {
-    public static function dropdown($id){
-   $sub_menus = DB::table('sub_menus')->where('main_menu_id', $id)->get();
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
+  public static function dropdown($id){
+  $sub_menus = DB::table('sub_menus')->where('main_menu_id', $id)->get();
    
   echo '<select name="sub_menu_id[]" id="sub_menu_id[]" class="form-control" multiple>';
   foreach($sub_menus as $sub_menu){                           
